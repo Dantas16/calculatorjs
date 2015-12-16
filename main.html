@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CalculatorJS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/calculator.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-h">
+            <h1>Calculator JS</h1>
+        </header>
+        <section class="calc-body">
+            <div class="result-place">
+                <input readonly type="text" id="result" name="result" title="Result" placeholder="0" value="0">
+            </div>
+            <div class="total hide">
+                Total: <span id="total-res">0</span>
+            </div>
+            <div class="alert-msg hide" id="alert-msg">
+                Message alert
+            </div>
+            <div class="calc-keyboard">
+                <ul>
+                    <li><button type="button" class="btn-keyboard calc-action" title="C" value="c">C</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="<" value="<"><-</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="Exponential" value="^">Exp</button></li>
+                </ul>
+                <ul>
+                    <li><button type="button" class="btn-keyboard cal-num" title="7" value="7">7</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="8" value="8">8</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="9" value="9">9</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="/" value="/">/</button></li>
+                </ul>
+                <ul>
+                    <li><button type="button" class="btn-keyboard cal-num" title="4" value="4">4</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="5" value="5">5</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="6" value="6">6</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="*" value="*">*</button></li>
+                </ul>
+                <ul>
+                    <li><button type="button" class="btn-keyboard cal-num" title="1" value="1">1</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="2" value="2">2</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="3" value="3">3</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="-" value="-">-</button></li>
+                </ul>
+                <ul>
+                    <li><button type="button" class="btn-keyboard cal-num" title="0" value="0">0</button></li>
+                    <li><button type="button" class="btn-keyboard cal-num" title="." value=".">.</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="+" value="+">+</button></li>
+                    <li><button type="button" class="btn-keyboard calc-action" title="=" value="=">=</button></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

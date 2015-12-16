@@ -1,0 +1,169 @@
+﻿//Colors
+$color_brown_33: #333;
+$color_brown_66: #666;
+
+$color_blue_1: #0066ff;
+$color_blue_2: #0066ff;
+
+$color_h1: #009999;
+
+$color_white: #fff;
+
+//Fonts
+@font-face {
+	font-family: OpenSansRegular;
+	src: url('fonts/OpenSans-Regular.ttf');
+}
+
+$font-opensans: OpenSansRegular, Arial, helvetica, sans-serif;
+$font-sansserif: sans-serif;
+$font_size_s: 16px;
+
+//Mixins
+@mixin common-btn($f_size, $back_color) {
+	font-size: $f_size;
+	color: $color_white;
+	background-color: $back_color;
+	border: none;
+}
+
+@mixin common-btn-transit($time, $back_color) {
+	transition: all $time linear;
+	font-size: 1.1em;
+	background-color: $back_color;
+	border-radius: 5px 0px;
+}
+
+/**
+* Calculator Style
+* @author Gutemberg Dantas
+**/
+*{ margin: 0 auto; padding: 0; }
+
+body {
+	font-family: $font-opensans;
+	font-size: $font_size-s;
+	color: $color_brown_33;
+}
+
+ul li {
+	list-style: none;
+}
+
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+.container {
+	position: relative;
+	margin-top: 1%;
+	max-width: 300px;
+	overflow: hidden;
+	border: 1px solid rgba($color_blue_1, 0.2);
+
+	&:before, :after {
+		content: ".";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+	}
+}
+/* Header */
+.main-h {
+	position: relative;
+	padding: 1% 0;
+	display: block;
+	background-color: rgba(215,230,246, 0.8);
+
+	h1 {
+		padding: 2% 0;
+		display: block;
+		text-align: center;
+		font-family: $font-sansserif;
+		font-size: 1.5em;
+		color: $color_h1;
+	}
+}
+/* Calculator */
+.calc-body {
+	position: relative;
+	display: block;
+	background-color: rgba(215,230,246, 0.8);
+}
+
+.total {
+	padding: 0% 4%;
+	font-size: 0.8em;
+}
+
+.alert-msg{
+	padding: 3% 2%;
+	font-size: 0.9em;
+	color: $color_white;
+	background-color: rgba($color_blue_1, 0.5);
+}
+
+.result-place {
+	padding: 1% 0;
+	max-width: 98%;
+	display: block;
+	text-align: center;
+	
+	input[type="text"] {
+		width: 90%;
+		text-align: right;
+		background: $color_white;
+		border: none;
+	}
+}
+
+.calc-keyboard {
+	padding: 5% 0;
+	max-width: 90%;
+	display: block;
+	
+	ul {
+		margin: 0;
+		padding-right: 6%;
+		text-align: right;
+	}
+
+	ul li {
+		display: inline-block;
+		margin: 0 1%;
+	}
+
+	ul li .btn-keyboard {
+		cursor: pointer;
+		display: block;
+		width: 50px;
+		height: 50px;
+	}
+
+	ul li .cal-num {
+		@include  common-btn(0.9em, rgba(0, 153, 153, 0.8));
+		
+		&:hover {
+			@include common-btn-transit(0.1s, rgba(0,153,153, 1));
+		}
+	}
+
+	ul li .calc-action {
+		@include common-btn(0.8em, rgba($color_blue_2, 0.6));
+
+		&:hover {
+			@include common-btn-transit(0.1s, rgba($color_blue_2, 1));
+		}
+	}
+}
+
+@media all and (min-width: 100px) {
+	.result-place {
+		input[type="text"] { padding: 5% 2%; }
+	}
+
+}
